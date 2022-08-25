@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine(args);
 
@@ -16,7 +16,8 @@
             }
             Console.WriteLine();
 
-            await Utilities.ShowConsoleAnimation();
+            Task.Factory.StartNew(async () => await Utilities.ShowConsoleAnimation());
+            
 
             string[] answers =
             {
